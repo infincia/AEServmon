@@ -1,0 +1,43 @@
+application: aeservmon
+version: 1
+runtime: python
+api_version: 1
+
+handlers:
+
+- url: /images
+  static_dir: images
+
+- url: /files
+  static_dir: files
+
+- url: /maintenance
+  script: maintenance.py
+  login: admin  
+
+- url: /checkservers 
+  script: checkservers.py
+  login: admin
+
+- url: /admin
+  script: admin.py
+  login: admin
+
+- url: /admin/storeserver
+  script: admin.py
+  login: admin
+  
+- url: /admin/deleteserver
+  script: admin.py
+  login: admin
+
+- url: /admin/storeadminoptions
+  script: admin.py
+  login: admin
+
+- url: .*
+  script: frontpage.py
+
+
+
+

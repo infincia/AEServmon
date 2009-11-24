@@ -1,0 +1,111 @@
+{% comment % }}
+Copyright (c) 2009, Steve Oliver (steve@xercestech.com)
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+    * Redistributions of source code must retain the above copyright
+      notice, this list of conditions and the following disclaimer.
+    * Redistributions in binary form must reproduce the above copyright
+      notice, this list of conditions and the following disclaimer in the
+      documentation and/or other materials provided with the distribution.
+    * Neither the name of the <organization> nor the
+      names of its contributors may be used to endorse or promote products
+      derived from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY STEVE OLIVER ''AS IS'' AND ANY
+EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL STEVE OLIVER BE LIABLE FOR ANY
+DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+{% endcomment %}
+
+{% extends 'core.html' %}
+
+{% block controlpanel %}
+<img style="display:inline;" src="/images/server.png"></img>
+<h1>App Engine Server Monitor</h1>
+<div id="userdisplay">
+Logged in as:<br/>
+{{ user }}
+</div><!---userdisplay--->
+<div id="linklist">
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/admin">Admin</a></li>
+<li><a href="/admin/addserver">Add Servers</a></li>
+</div><!---linklist--->
+{% endblock %}
+
+{% block breadcrumbs %}
+Admin Panel
+{% endblock %}
+{% block pagearea %}
+<h3>Servers:</h3>
+<div id="adminserverlist">
+<table>
+<tr><td>Domain</td><td>SSL</td><td>Code</td><td>Uptime</td><td>Notify</td></tr>
+{% for server in serverlist %}
+<tr>
+<td>{{ server.serverdomain }}</td>
+<td>{% if server.ssl %}Yes{% else %}No{% endif %}</td>
+<td>{{ server.responsecode }}</td>
+<td>{{ server.uptime }}</td>
+<td>{{ server.notifymethod }}</td>
+<td><form action="/admin/deleteserver" method="post">
+<input type="hidden" name="serverdomain" value={{ server.serverdomain }}>
+<input type="submit" value="Delete Server"></td>
+</tr>
+
+</form>
+{% endfor %}
+</table>
+</div><!---server list--->
+<fieldset>
+<legend>
+Add more servers:
+</legend>
+<div id="form">
+<form action="/admin/storeserver" method="post">
+<div id="entry">Server Domain: <textarea name="serverdomain" rows="1" cols="35"></textarea></div>
+<div id="entry">Notification method:
+<select name="notifymethod">
+<option value="prowl" /> Prowl</option>
+<!---<option value="twitter" />Twitter Direct Message</option>--->
+<option value="email" /> Email</option>
+</select></div>
+<div id="entry">SSL? <select name="ssl">
+<option value="False" />No</option>
+<option value="True" />Yes</option>
+</select></div>
+<div id="button"><input type="submit" value="Add Server"></div>
+</form></fieldset>
+<br/>
+<fieldset>
+<legend>
+Edit administrative options
+</legend>
+<!---Current twitter username: {{ twitteruser }}<br/>--->
+<!---Current twitter password: {{ twitterpass }}<br/>--->
+<div id="prowlapiline">Current prowl API key: {{ prowlkey }}
+{% if adminoptions.prowlkeyisvalid %}
+<img id="prowlimg" src="/images/up.png"/>
+{% else %}
+<img id="prowlimg" src="/images/down.png"/>
+{% endif %}</div><!---prowlapiline--->
+<div id="form">
+<form action="/admin/storeadminoptions" method="post">
+<!---<div id="entry">Twitter Username: <textarea name="twitteruser" rows="1" cols="35"></textarea></div>--->
+<!---<div id="entry">Twitter Password: <textarea name="twitterpass" rows="1" cols="35"></textarea></div>--->
+<div id="entry">Prowl API key: <textarea name="prowlkey" rows="1" cols="40"></textarea></div>
+<div id="button"><input type="submit" value="Update Options"></div>
+</form>
+</fieldset>
+</div></div>
+
+{% endblock %}

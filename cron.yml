@@ -1,0 +1,8 @@
+cron:
+- description: checking servers
+  url: /checkservers
+  schedule: every 1 minutes
+
+- description: maintenance
+  url: /maintenance 
+  schedule: every 20 minutes

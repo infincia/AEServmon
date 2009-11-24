@@ -1,0 +1,235 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXFileReference section */
+		AA4ED7DB1099465500CCF348 /* admin.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = admin.py; sourceTree = "<group>"; };
+		AA4ED7DC1099465500CCF348 /* app.yaml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = app.yaml; sourceTree = "<group>"; };
+		AA4ED7E01099465500CCF348 /* categories.pbxbtree */ = {isa = PBXFileReference; lastKnownFileType = file; path = categories.pbxbtree; sourceTree = "<group>"; };
+		AA4ED7E11099465500CCF348 /* cdecls.pbxbtree */ = {isa = PBXFileReference; lastKnownFileType = file; path = cdecls.pbxbtree; sourceTree = "<group>"; };
+		AA4ED7E21099465500CCF348 /* decls.pbxbtree */ = {isa = PBXFileReference; lastKnownFileType = file; path = decls.pbxbtree; sourceTree = "<group>"; };
+		AA4ED7E31099465500CCF348 /* files.pbxbtree */ = {isa = PBXFileReference; lastKnownFileType = file; path = files.pbxbtree; sourceTree = "<group>"; };
+		AA4ED7E41099465500CCF348 /* imports.pbxbtree */ = {isa = PBXFileReference; lastKnownFileType = file; path = imports.pbxbtree; sourceTree = "<group>"; };
+		AA4ED7E51099465500CCF348 /* pbxindex.header */ = {isa = PBXFileReference; lastKnownFileType = file; path = pbxindex.header; sourceTree = "<group>"; };
+		AA4ED7E61099465500CCF348 /* protocols.pbxbtree */ = {isa = PBXFileReference; lastKnownFileType = file; path = protocols.pbxbtree; sourceTree = "<group>"; };
+		AA4ED7E71099465500CCF348 /* refs.pbxbtree */ = {isa = PBXFileReference; lastKnownFileType = file; path = refs.pbxbtree; sourceTree = "<group>"; };
+		AA4ED7E91099465500CCF348 /* control */ = {isa = PBXFileReference; lastKnownFileType = file; path = control; sourceTree = "<group>"; };
+		AA4ED7EA1099465500CCF348 /* strings */ = {isa = PBXFileReference; lastKnownFileType = file; path = strings; sourceTree = "<group>"; };
+		AA4ED7EB1099465500CCF348 /* subclasses.pbxbtree */ = {isa = PBXFileReference; lastKnownFileType = file; path = subclasses.pbxbtree; sourceTree = "<group>"; };
+		AA4ED7EC1099465500CCF348 /* checkservers.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = checkservers.py; sourceTree = "<group>"; };
+		AA4ED7ED1099465500CCF348 /* cron.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cron.yml; sourceTree = "<group>"; };
+		AA4ED7EF1099465500CCF348 /* style.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = style.css; sourceTree = "<group>"; };
+		AA4ED7F11099465500CCF348 /* db.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = db.png; sourceTree = "<group>"; };
+		AA4ED7F21099465500CCF348 /* down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = down.png; sourceTree = "<group>"; };
+		AA4ED7F31099465500CCF348 /* server.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = server.png; sourceTree = "<group>"; };
+		AA4ED7F41099465500CCF348 /* up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = up.png; sourceTree = "<group>"; };
+		AA4ED7F51099465500CCF348 /* index.yaml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = index.yaml; sourceTree = "<group>"; };
+		AA4ED7F61099465500CCF348 /* main.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = main.py; sourceTree = "<group>"; };
+		AA4ED7F71099465500CCF348 /* maintenance.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = maintenance.py; sourceTree = "<group>"; };
+		AA4ED7F81099465500CCF348 /* serverclass.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = serverclass.py; sourceTree = "<group>"; };
+		AA4ED7F91099465500CCF348 /* serverclass.pyc */ = {isa = PBXFileReference; lastKnownFileType = file; path = serverclass.pyc; sourceTree = "<group>"; };
+		AA4ED7FA1099466400CCF348 /* admin.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = admin.html; sourceTree = "<group>"; };
+		AA4ED8241099555200CCF348 /* frontpage.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = frontpage.py; sourceTree = "<group>"; };
+		AA4ED8271099564400CCF348 /* wsgi.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = wsgi.py; sourceTree = "<group>"; };
+		AA4ED8C610996F9F00CCF348 /* admin-addserver.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "admin-addserver.html"; sourceTree = "<group>"; };
+		AA4ED8C710996FA800CCF348 /* admin-listservers.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "admin-listservers.html"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		08FB7794FE84155DC02AAC07 /* aeservmon */ = {
+			isa = PBXGroup;
+			children = (
+				AA4ED7DB1099465500CCF348 /* admin.py */,
+				AA4ED7DC1099465500CCF348 /* app.yaml */,
+				AA4ED7DD1099465500CCF348 /* build */,
+				AA4ED7EC1099465500CCF348 /* checkservers.py */,
+				AA4ED7ED1099465500CCF348 /* cron.yml */,
+				AA4ED7EE1099465500CCF348 /* files */,
+				AA4ED7F01099465500CCF348 /* images */,
+				AA4ED7F51099465500CCF348 /* index.yaml */,
+				AA4ED7F61099465500CCF348 /* main.py */,
+				AA4ED7F71099465500CCF348 /* maintenance.py */,
+				AA4ED7F81099465500CCF348 /* serverclass.py */,
+				AA4ED7F91099465500CCF348 /* serverclass.pyc */,
+				AA4ED7FA1099466400CCF348 /* admin.html */,
+				AA4ED8241099555200CCF348 /* frontpage.py */,
+				AA4ED8271099564400CCF348 /* wsgi.py */,
+				AA4ED8C610996F9F00CCF348 /* admin-addserver.html */,
+				AA4ED8C710996FA800CCF348 /* admin-listservers.html */,
+			);
+			name = aeservmon;
+			sourceTree = "<group>";
+		};
+		AA4ED7DD1099465500CCF348 /* build */ = {
+			isa = PBXGroup;
+			children = (
+				AA4ED7DE1099465500CCF348 /* aeservmon.build */,
+			);
+			path = build;
+			sourceTree = "<group>";
+		};
+		AA4ED7DE1099465500CCF348 /* aeservmon.build */ = {
+			isa = PBXGroup;
+			children = (
+				AA4ED7DF1099465500CCF348 /* aeservmon.pbxindex */,
+			);
+			path = aeservmon.build;
+			sourceTree = "<group>";
+		};
+		AA4ED7DF1099465500CCF348 /* aeservmon.pbxindex */ = {
+			isa = PBXGroup;
+			children = (
+				AA4ED7E01099465500CCF348 /* categories.pbxbtree */,
+				AA4ED7E11099465500CCF348 /* cdecls.pbxbtree */,
+				AA4ED7E21099465500CCF348 /* decls.pbxbtree */,
+				AA4ED7E31099465500CCF348 /* files.pbxbtree */,
+				AA4ED7E41099465500CCF348 /* imports.pbxbtree */,
+				AA4ED7E51099465500CCF348 /* pbxindex.header */,
+				AA4ED7E61099465500CCF348 /* protocols.pbxbtree */,
+				AA4ED7E71099465500CCF348 /* refs.pbxbtree */,
+				AA4ED7E81099465500CCF348 /* strings.pbxstrings */,
+				AA4ED7EB1099465500CCF348 /* subclasses.pbxbtree */,
+			);
+			path = aeservmon.pbxindex;
+			sourceTree = "<group>";
+		};
+		AA4ED7E81099465500CCF348 /* strings.pbxstrings */ = {
+			isa = PBXGroup;
+			children = (
+				AA4ED7E91099465500CCF348 /* control */,
+				AA4ED7EA1099465500CCF348 /* strings */,
+			);
+			path = strings.pbxstrings;
+			sourceTree = "<group>";
+		};
+		AA4ED7EE1099465500CCF348 /* files */ = {
+			isa = PBXGroup;
+			children = (
+				AA4ED7EF1099465500CCF348 /* style.css */,
+			);
+			path = files;
+			sourceTree = "<group>";
+		};
+		AA4ED7F01099465500CCF348 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				AA4ED7F11099465500CCF348 /* db.png */,
+				AA4ED7F21099465500CCF348 /* down.png */,
+				AA4ED7F31099465500CCF348 /* server.png */,
+				AA4ED7F41099465500CCF348 /* up.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXLegacyTarget section */
+		D28A88AD04BDD90700651E21 /* aeservmon */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "$(ACTION)";
+			buildConfigurationList = 1DEB918F08733D9F0010E9CD /* Build configuration list for PBXLegacyTarget "aeservmon" */;
+			buildPhases = (
+			);
+			buildToolPath = /usr/bin/make;
+			dependencies = (
+			);
+			name = aeservmon;
+			passBuildSettingsInEnvironment = 1;
+			productName = aeservmon;
+		};
+/* End PBXLegacyTarget section */
+
+/* Begin PBXProject section */
+		08FB7793FE84155DC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1DEB919308733D9F0010E9CD /* Build configuration list for PBXProject "aeservmon" */;
+			compatibilityVersion = "Xcode 3.1";
+			hasScannedForEncodings = 1;
+			mainGroup = 08FB7794FE84155DC02AAC07 /* aeservmon */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D28A88AD04BDD90700651E21 /* aeservmon */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin XCBuildConfiguration section */
+		1DEB919008733D9F0010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DEBUGGING_SYMBOLS = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = aeservmon;
+			};
+			name = Debug;
+		};
+		1DEB919108733D9F0010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = aeservmon;
+			};
+			name = Release;
+		};
+		1DEB919408733D9F0010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.5;
+			};
+			name = Debug;
+		};
+		1DEB919508733D9F0010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.5;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB918F08733D9F0010E9CD /* Build configuration list for PBXLegacyTarget "aeservmon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB919008733D9F0010E9CD /* Debug */,
+				1DEB919108733D9F0010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DEB919308733D9F0010E9CD /* Build configuration list for PBXProject "aeservmon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB919408733D9F0010E9CD /* Debug */,
+				1DEB919508733D9F0010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 08FB7793FE84155DC02AAC07 /* Project object */;
+}
