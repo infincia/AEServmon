@@ -107,7 +107,7 @@ class CheckServers(webapp.RequestHandler):
 			self.serverisdown(server,000)
 			return 
 		if result.status_code == 500:
-			logging.info('server returned 500')
+			logging.info('%s returned 500' % server.serverdomain)
 			self.serverisdown(server,result.status_code)
 		else:
 			logging.info('%s is up, status code %s' % (server.serverdomain,result.status_code))
