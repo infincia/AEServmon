@@ -49,14 +49,15 @@ Admin Panel
 <h3>Servers:</h3>
 <div id="adminserverlist">
 <table>
-<tr><td>Domain</td><td>SSL</td><td>Code</td><td>Uptime</td><td>Notify</td></tr>
+<tr><td>Domain</td><td>SSL</td><td>Code</td><td>Uptime</td><td>Prowl</td><td>Email</td></tr>
 {% for server in serverlist %}
 <tr>
 <td>{{ server.serverdomain }}</td>
 <td>{% if server.ssl %}Yes{% else %}No{% endif %}</td>
 <td>{{ server.responsecode }}</td>
 <td>{{ server.uptime }}</td>
-<td>{{ server.notifymethod }}</td>
+<td>{{ server.notifywithprowl }}</td>
+<td>{{ server.notifywithemail }}</td>
 <td><form action="/admin/deleteserver" method="post">
 <input type="hidden" name="serverdomain" value={{ server.serverdomain }}>
 <input type="submit" value="Delete Server"></td>
@@ -73,16 +74,14 @@ Add more servers:
 <div id="form">
 <form action="/admin/storeserver" method="post">
 <div id="entry">Server Domain: <textarea name="serverdomain" rows="1" cols="35"></textarea></div>
-<div id="entry">Notification method:
-<select name="notifymethod">
-<option value="prowl" /> Prowl</option>
-<!---<option value="twitter" />Twitter Direct Message</option>--->
-<option value="email" /> Email</option>
-</select></div>
 <div id="entry">SSL? <select name="ssl">
 <option value="False" />No</option>
 <option value="True" />Yes</option>
 </select></div>
+<div id="entry">Notification methods:      
+Prowl <input type="checkbox" name="notifywithprowl" value="True" /><br/>
+Email <input type="checkbox" name="notifywithemail" value="True" /><br/>
+</div>
 <div id="button"><input type="submit" value="Add Server"></div>
 </form></fieldset>
 <br/>

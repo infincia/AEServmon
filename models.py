@@ -37,11 +37,17 @@ class Server(db.Model):
     responsecode = db.IntegerProperty("Server response code", default=000)
     notifylimiter = db.BooleanProperty("Notify limiter", default=False)
     uptimecounter = db.IntegerProperty("Uptime Counter", default=0)
-    notifymethod = db.StringProperty("Notification Method", multiline=False, default='prowl')
+    notifywithprowl = db.BooleanProperty("Prowl notifications",default=False)
+    notifywithemail = db.BooleanProperty("Email notifications",default=False)
+    notifywithtwitter = db.BooleanProperty("Twitter notifications",default=False)
+    notifywithfacebook = db.BooleanProperty("Facebook notifications",default=False)
+    notifywithsms = db.BooleanProperty("SMS notifications",default=False)
     uptime = db.StringProperty("Uptime")
     
 class AdminOptions(db.Model):
     twitteruser = db.StringProperty("Twitter Username", multiline=False)
     twitterpass = db.StringProperty("Twitter Passowrd", multiline=False)
+    facebookconnect = db.StringProperty("Facebook connect", multiline=False)
+    mobilesmsnumber = db.StringProperty("Mobile SMS number", multiline=False)
     prowlkey = db.StringProperty("Prowl API Key", multiline=False)
     prowlkeyisvalid = db.BooleanProperty("Prowl key status", default=False)

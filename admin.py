@@ -43,63 +43,65 @@ import datetime
 import logging
 
 class Admin(webapp.RequestHandler):
-    def get(self):
-        adminoptions = AdminOptions.get_by_key_name('credentials')
-        if adminoptions:  
-            twitterpass = adminoptions.twitterpass
-            twitteruser = adminoptions.twitteruser
-            prowlkey = adminoptions.prowlkey
-        else:
-            twitterpass = "Change Me"
-            twitteruser = "Change Me"
-            prowlkey = "Change Me"
-        serverlist = db.GqlQuery("SELECT * FROM Server")
-        user = users.get_current_user()
-        template_values = {'user': user, 'twitteruser': twitteruser, 'twitterpass': twitterpass, 'serverlist': serverlist, 'prowlkey': prowlkey, 'adminoptions': adminoptions,}
-        path = os.path.join(os.path.dirname(__file__), 'admin.html')
-        self.response.out.write(template.render(path, template_values))
+	def get(self):
+		adminoptions = AdminOptions.get_by_key_name('credentials')
+		if adminoptions:  
+			twitterpass = adminoptions.twitterpass
+			twitteruser = adminoptions.twitteruser
+			prowlkey = adminoptions.prowlkey
+		else:
+			twitterpass = "Change Me"
+			twitteruser = "Change Me"
+			prowlkey = "Change Me"
+		serverlist = db.GqlQuery("SELECT * FROM Server")
+		user = users.get_current_user()
+		template_values = {'user': user, 'twitteruser': twitteruser, 'twitterpass': twitterpass, 'serverlist': serverlist, 'prowlkey': prowlkey, 'adminoptions': adminoptions,}
+		path = os.path.join(os.path.dirname(__file__), 'admin.html')
+		self.response.out.write(template.render(path, template_values))
         
 class StoreServer(webapp.RequestHandler):
-    def post(self):
-        server = Server(key_name=self.request.get('serverdomain'))
-        server.serverdomain = self.request.get('serverdomain')
-        if self.request.get('ssl') == "True":
-            server.ssl = True
-        else:
-            server.ssl = False
-        server.notifymethod = self.request.get('notifymethod')
-        user = users.get_current_user()
-        server.email = user.email()
-        server.put()
-        self.redirect('/admin')
+	def post(self):	
+		server = Server(key_name=self.request.get('serverdomain'))
+		server.serverdomain = self.request.get('serverdomain')
+		if self.request.get('ssl') == "True":
+			server.ssl = True
+		else:
+			server.ssl = False
+		if self.request.get('notifywithprowl') == "True":
+			server.notifywithprowl = True
+		if self.request.get('notifywithemail') == "True":
+			server.notifywithemail = True
+		#server.notifywithprowl = self.request.get('notifywithtwitter')
+		server.email = users.get_current_user().email()
+		server.put()
+		self.redirect('/admin')
         
 class DeleteServer(webapp.RequestHandler):
-    def post(self):
-        serverdomain = self.request.get('serverdomain')
-        server = Server.get_by_key_name(serverdomain)
-        server.delete()
-        self.redirect('/admin')
+	def post(self):
+		serverdomain = self.request.get('serverdomain')
+		server = Server.get_by_key_name(serverdomain)
+		server.delete()
+		self.redirect('/admin')
         
 class StoreAdminOptions(webapp.RequestHandler):
-    def post(self):        
-        adminoptions = AdminOptions(key_name="credentials")
-        adminoptions.twitteruser = self.request.get('twitteruser')
-        adminoptions.twitterpass = self.request.get('twitterpass')
-        adminoptions.prowlkey = self.request.get('prowlkey')
-        prowlnotifier = prowlpy.Prowl(self.request.get('prowlkey'))
-        try:
-            adminoptions.prowlkeyisvalid = prowlnotifier.verify_key()
-        except:
-            adminoptions.prowlkeyisvalid = False
-        adminoptions.put()
-        self.redirect('/admin')
+	def post(self):        
+		adminoptions = AdminOptions(key_name="credentials")
+		adminoptions.twitteruser = self.request.get('twitteruser')
+		adminoptions.twitterpass = self.request.get('twitterpass')
+		adminoptions.prowlkey = self.request.get('prowlkey')
+		prowlnotifier = prowlpy.Prowl(self.request.get('prowlkey'))
+		try:
+			adminoptions.prowlkeyisvalid = prowlnotifier.verify_key()
+		except:
+			adminoptions.prowlkeyisvalid = False
+		adminoptions.put()
+		self.redirect('/admin')
         
         
 def main():
-  application = webapp.WSGIApplication([('/admin/storeserver', StoreServer),('/admin/deleteserver', DeleteServer),('/admin/storeadminoptions', StoreAdminOptions),('/admin', Admin)],
-                                       debug=True)
-  wsgiref.handlers.CGIHandler().run(application)
+	application = webapp.WSGIApplication([('/admin/storeserver', StoreServer),('/admin/deleteserver', DeleteServer),('/admin/storeadminoptions', StoreAdminOptions),('/admin', Admin)],debug=True)
+	wsgiref.handlers.CGIHandler().run(application)
 
 
 if __name__ == '__main__':
-  main()
+	main()
