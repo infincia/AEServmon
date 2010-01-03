@@ -30,6 +30,7 @@ from google.appengine.api import users
 from google.appengine.ext.webapp.util import run_wsgi_app
 from google.appengine.ext import db
 from google.appengine.api import mail
+from google.appengine.api.urlfetch import DownloadError
 
 import cgi
 import datetime
@@ -101,8 +102,9 @@ class CheckServers(webapp.RequestHandler):
 		else:
 			prefix = "http://"
 		try:
-			result = urlfetch.fetch(url=prefix + "%s" % server.serverdomain)
-		except:
+			url = prefix + "%s" % server.serverdomain
+			result = urlfetch.fetch(url, headers = {'Cache-Control' : 'max-age=30'} )
+		except DownloadError:
 			logging.info('%s could not be reached' % server.serverdomain)
 			self.serverisdown(server,000)
 			return 
