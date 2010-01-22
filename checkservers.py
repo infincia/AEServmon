@@ -92,31 +92,27 @@ class CheckServers(webapp.RequestHandler):
 				self.notifyemail(server)
 		else:
 			pass
-				
+
 	def servercameback(self,server):
 		server.timeservercameback = datetime.datetime.now()
 
 	def testserver(self,server):
 		if server.ssl:
-			prefix = "https://"
+			prefix = "https://"	
 		else:
 			prefix = "http://"
 		try:
 			url = prefix + "%s" % server.serverdomain
-			result = urlfetch.fetch(url, headers = {'Cache-Control' : 'max-age=30'} )
+			result = urlfetch.fetch(url, headers = {'Cache-Control' : 'max-age=30'}, deadline=10 )
 		except DownloadError:
-			logging.info('%s could not be reached' % server.serverdomain)
 			self.serverisdown(server,000)
-			return 
-		if result.status_code == 500:
-			logging.info('%s returned 500' % server.serverdomain)
-			self.serverisdown(server,result.status_code)
 		else:
-			logging.info('%s is up, status code %s' % (server.serverdomain,result.status_code))
-			self.serverisup(server,result.status_code)
+			if result.status_code == 500:
+				self.serverisdown(server,result.status_code)
+			else:
+				self.serverisup(server,result.status_code)
 
 	def notifyemail(self,server):
-		logging.info(' %s is down, notifying with email' % server.serverdomain)
 		message = mail.EmailMessage()
 		message.sender = server.email
 		message.subject = "%s is down" % server.serverdomain
@@ -128,7 +124,6 @@ class CheckServers(webapp.RequestHandler):
 					
 	def notifytwitter(self,server):
 		pass
-		#logging.info('notifying with twitter')
 		#api = twitter.Api(username="%s" % self.adminoptions.twitteruser , password="%s" % self.adminoptions.twitterpass)
 		#api.PostDirectMessage(self.adminoptions.twitteruser, "%s is down" % server.serverdomain)
 		#server.notifylimiter = True
