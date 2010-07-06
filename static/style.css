@@ -1,0 +1,235 @@
+# Copyright (c) 2009, Steve Oliver (mrsteveman1@gmail.com)
+#All rights reserved.
+#
+#Redistribution and use in source and binary forms, with or without
+#modification, are permitted provided that the following conditions are met:
+#    * Redistributions of source code must retain the above copyright
+#      notice, this list of conditions and the following disclaimer.
+#    * Redistributions in binary form must reproduce the above copyright
+#      notice, this list of conditions and the following disclaimer in the
+#      documentation and/or other materials provided with the distribution.
+#    * Neither the name of the <organization> nor the
+#      names of its contributors may be used to endorse or promote products
+#      derived from this software without specific prior written permission.
+#
+#THIS SOFTWARE IS PROVIDED BY STEVE OLIVER ''AS IS'' AND ANY
+#EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+#WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+#DISCLAIMED. IN NO EVENT SHALL STEVE OLIVER BE LIABLE FOR ANY
+#DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+#(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+#LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+#ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+#(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+#SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+body { 
+    margin:0; 
+    padding:0;
+} 
+
+h1 {
+margin:0;
+padding:0;
+}
+
+h2 {
+margin:0;
+padding:0;
+}
+
+#headerarea 0 0 0 0; 
+    width:100%;
+    margin:0 auto;
+} 
+
+#mainpanel #description { 
+    margin:0; 
+    padding:40px; 
+} 
+
+#mainpanel h2 {
+    padding:24px 0 0 24px;
+}
+
+#pagearea {
+    padding:12px 0 0 218px;
+}
+
+#pagearea h3 {
+    margin:0;
+    padding:0;
+}
+
+#adminserverlist {
+    margin-bottom:12px;
+}
+
+#adminserverlist table {
+    border:1px inset #666;
+}
+
+#adminserverlist table td {
+    border:1px inset #666;
+    text-align:center;
+}
+
+#adminserverlist table td form {
+    margin:0;
+    padding:0;
+}
+
+#monitoring { 
+	margin-left:12px;	
+	padding:0; 
+} 
+
+#serverlist { 
+	margin-left:12px;  
+}
+
+#serverlist table tr {
+    margin-bottom:8px;
+}
+
+#serveritem {
+    margin:20px 0;
+}
+
+#serveritemtext {
+
+    display:inline;
+}
+
+#statusimage {
+   display:inline;
+   margin-right:4px;
+   padding-top:2px;
+}
+
+#statusimagetd {
+   border-right:4px solid #aaa;
+}
+
+#serverdomain {
+    margin:0;
+    display:inline;
+    font-weight:bold;
+}
+
+#serverport {
+    margin-right:2px;
+    margin-left:-4px;
+    display:inline;
+}
+
+#responsecode {
+	font-weight:bold;
+	color:#00ff00;
+	display:inline;
+}
+
+#wrapper {
+    padding:0;
+    margin:0;
+    width:100%;
+}
+
+#controlpanel {;
+padding-top:12px;
+width:200px;
+height:100%;
+float:left;
+background:#1d1c1c;
+}
+
+#controlpanel h1 {
+    margin:5px 0 0 0;
+    padding:0;
+    font-size:14px;
+    color:#fff;
+    text-align:center;
+}
+
+#controlpanel img {
+    height:60px;
+    margin-left:15px;
+}
+
+#linklist ul{
+list-style:none;
+margin:5px 0 0 0;
+padding:0;
+text-decoration:none;
+text-align:center;
+}
+
+#linklist ul li {
+border-bottom:2px #fff inset;
+margin:4px 0 0 0;
+}
+
+#linklist ul li a {
+font-weight:bold;
+text-decoration:none;
+color:#fff;
+}
+
+#userdisplay {
+color:#fff;
+position:absolute;
+bottom:0px;
+left:18px;
+}
+
+#entrypanel {
+padding:0;
+margin-left:200px;
+}
+
+#breadcrumbs {
+    padding:4px;
+    background:#1d1c1c;
+    color:#fff;
+}
+
+fieldset {
+    width:510px;
+}
+
+#form {
+    margin-top:8px;
+    width:485px;
+}
+
+#form #entry {
+text-align:right;
+margin-bottom:6px;
+}
+
+#form #button {
+text-align:right;
+}
+
+#form textarea {
+    height:18px;
+    border:1px solid #aaa;
+}
+
+#prowlimg {
+width:24px;
+height:24px;
+position:relative;
+top:5px;
+}
+
+#adminlink {
+    margin-left:12px;
+}
+
+#footerarea { 
+    height:60px; 
+    padding:12px; 
+    font-size:22px; 
+    font-weight:bold; 
+} 
