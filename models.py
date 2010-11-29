@@ -42,6 +42,7 @@ class Server(db.Model):
 	notifywithtwitter = db.BooleanProperty("Twitter notifications",default=False)
 	notifywithfacebook = db.BooleanProperty("Facebook notifications",default=False)
 	notifywithsms = db.BooleanProperty("SMS notifications",default=False)
+	falsepositivecheck = db.BooleanProperty("Prevent single bad result from triggering notifications",default=False)
 	uptime = db.StringProperty("Uptime")
 	class Uptime(db.Model):
 		unittime = db.DateTimeProperty("Time period for uptime data", auto_now_add=False)

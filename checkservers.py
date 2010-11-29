@@ -73,6 +73,7 @@ class CheckServers(webapp.RequestHandler):
 		if server.status == False:
 			self.servercameback(server)
 		server.status = True
+		server.falsepositivecheck = False
 		server.responsecode = int(responsecode)
 		server.uptimecounter = server.uptimecounter + 1
 		self.updateuptime(server)
@@ -105,7 +106,10 @@ class CheckServers(webapp.RequestHandler):
 			url = prefix + "%s" % server.serverdomain
 			result = urlfetch.fetch(url, headers = {'Cache-Control' : 'max-age=30'}, deadline=10 )
 		except DownloadError:
-			self.serverisdown(server,000)
+			if server.falsepositivecheck:
+				self.serverisdown(server,000)
+			else:
+				server.falsepositivecheck = True
 		else:
 			if result.status_code == 500:
 				self.serverisdown(server,result.status_code)
