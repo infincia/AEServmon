@@ -110,6 +110,7 @@ class CheckServers(webapp.RequestHandler):
 				self.serverisdown(server,000)
 			else:
 				server.falsepositivecheck = True
+				server.put()
 		else:
 			if result.status_code == 500:
 				self.serverisdown(server,result.status_code)
